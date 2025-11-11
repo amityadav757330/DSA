@@ -41,5 +41,4 @@ The goal of this repository is to strengthen concepts of:
 
 ---
 
-## 📂 Repository Structure
 
