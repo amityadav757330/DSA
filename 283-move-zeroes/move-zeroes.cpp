@@ -2,18 +2,22 @@ class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
         int n=nums.size();
-        for(int i=0;i<n;){
+        int freq=0;
+        for(int i =0;i<n;){
             if(nums[i]==0){
-                nums.erase(nums.begin()+i);
-                nums.push_back(0);
-                n--;
-              
+            freq++;
+            nums.erase(nums.begin()+i);
+            n--;
             }else{
                 i++;
             }
             
-
+        }
+        
+        while(freq--){
+              nums.push_back(0);
         }
 
+        
     }
 };
