@@ -10,11 +10,8 @@ public:
         if (ans.empty()) {
             return {-1, -1};
         }
-        vector<int>val;
-        val.push_back(ans[0]);
-        val.push_back(ans[ans.size()-1]);
+        
 
-
-        return val;
+        return {ans.front(),ans.back()};
     }
 };
