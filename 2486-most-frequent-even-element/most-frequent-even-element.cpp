@@ -11,7 +11,7 @@ public:
         int maxi = 0;
         int ans = -1;
 
-        for (int i = 0; i <= 100000; i += 2) {
+        for (int i = 0; i <=100000; i += 2) {
             if (freq[i] > maxi) {
                 maxi = freq[i];
                 ans = i;
