@@ -1,36 +1,42 @@
 class Solution {
- public:
-  vector<vector<int>> threeSum(vector<int>& nums) {
-    if (nums.size() < 3)
-      return {};
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int n= nums.size();
+        vector<vector<int>>result;
+        for(int i=0;i<n-2;i++){
+            if(i>0 && nums[i]==nums[i-1]){
+                continue;
+            }
+            int left = i+1;
+            int right = n-1;
+            int sum = -1*nums[i];
+            while(left < right ){
+                int s = nums[left]+nums[right];
 
-    vector<vector<int>> ans;
+                if(s==sum){
+                    result.push_back({nums[i],nums[left],nums[right]});
+                    left++;
+                    right--;
+                    while(left<n && nums[left]==nums[left-1]){
+                        left++;
+                    }
+                    while(right>=0 && nums[right]==nums[right+1]){
+                        right--;
+                    }
 
-    ranges::sort(nums);
+                }
+                else if (s<sum){
+                    left++;
+                }else{
+                    right--;
 
-    for (int i = 0; i + 2 < nums.size(); ++i) {
-      if (i > 0 && nums[i] == nums[i - 1])
-        continue;
-      // Choose nums[i] as the first number in the triplet, then search the
-      // remaining numbers in [i + 1, n - 1].
-      int l = i + 1;
-      int r = nums.size() - 1;
-      while (l < r) {
-        const int sum = nums[i] + nums[l] + nums[r];
-        if (sum == 0) {
-          ans.push_back({nums[i], nums[l++], nums[r--]});
-          while (l < r && nums[l] == nums[l - 1])
-            ++l;
-          while (l < r && nums[r] == nums[r + 1])
-            --r;
-        } else if (sum < 0) {
-          ++l;
-        } else {
-          --r;
+                }
+            }
+        
+
         }
-      }
+        return result;
+        
     }
-
-    return ans;
-  }
 };
