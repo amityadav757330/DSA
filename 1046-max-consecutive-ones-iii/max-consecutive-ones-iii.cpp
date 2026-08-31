@@ -1,7 +1,6 @@
 class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
-        unordered_map<char, int> f;
         int low = 0;
         int res = 0;
         int n = nums.size();
