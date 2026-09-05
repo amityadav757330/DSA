@@ -19,7 +19,7 @@ public:
             res=min(res,ending);
             
         }
-        result=(result,max(abs(ans),abs(res)));
+        result=max(result,max(abs(ans),abs(res)));
         return result;
 
         
