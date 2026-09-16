@@ -2,7 +2,7 @@ class Solution {
 public:
     string removeDuplicates(string s) {
         stack<char>st;
-        vector<char> res;;
+        string res;
         int n = s.size();
         for(int i = 0 ; i< n ; i++){
             if(st.empty()){
@@ -21,6 +21,6 @@ public:
             st.pop();
         }
        reverse(res.begin(),res.end());
-       return string(res.begin(),res.end());
+       return res;
     }
 };
