@@ -12,7 +12,7 @@ public:
         return fun(need,have);
         
     }
-    bool fun(unordered_map<char,int>need,unordered_map<char,int>have){
+    bool fun(unordered_map<char,int>&need,unordered_map<char,int>&have){
         for(auto i:need){
             char c = i.first;
             int fneed = i.second;
